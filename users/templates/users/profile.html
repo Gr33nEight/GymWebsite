@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>
+        {{ user.username }}
+    </h1>
+    <h2>
+        Bmi: 
+        {% if user.bmi_count %}
+            {{ user.bmi_count }}
+        {% else %}
+            Nie ma
+        {% endif %}
+    </h2>
+{% endblock content %}
