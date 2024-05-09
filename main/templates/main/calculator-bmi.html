@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="calculator">
+        <h2>Kalkulator BMI</h2>
+        <div class="input-group">
+            <label for="weight">Podaj wagę w kg:</label>
+            <input type="number" name="weight" id="weight" placeholder="Waga" min="0" max="999">
+        </div>
+        <div class="input-group">
+            <label for="height">Podaj wzrost w cm:</label>
+            <input type="number" name="height" id="height" placeholder="Wzrost" min="0" max="999">
+        </div>
+        <button class="btn-calculate">Oblicz BMI</button>
+        <div id="result"></div>
+    </div>
+</form>
+{% if bmi != 0 %}
+    <div class="results">
+        <h2 class="BMI-h2">Wynik</h2>
+        <div class="result-item">BMI: {{ user.bmi_count }}</div>   
+        <div class="result-item">Opis: {{ description }}</div>   
+    </div>
+{% endif %}
+{% endblock content %}

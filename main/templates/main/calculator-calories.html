@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+<div class="calculator">
+    <h2>Kalkulator kalorii</h2>
+    <div class="input-group">
+        <label for="weight">Podaj swój wiek:</label>
+        <input type="number" name="age" id="age" placeholder="Wiek" min="0" max="99">
+    </div>
+    <div class="input-group">
+        <label for="height">Podaj ilość treningów w tygodniu:</label>
+        <input type="number" name="training" id="height" placeholder="Ilość treningów" min="0" max="7">
+    </div>
+    <button type="submit" class="btn-calculate">Oblicz kalorie</button>
+    <div id="result"></div>
+</div>
+{% if calories != 0 and protein != 0 %}
+    <div class="results">
+    
+        <h2 class="BMI-h2">Wynik</h2>
+        <div class="result-item">Kalorie: {{ calories }} kcal</div>   
+        <div class="result-item">Białko: {{ protein }} g</div>   
+    
+    </div>
+    <h2>{{ bmi }}</h2>
+{% endif %}
+{% endblock content %}

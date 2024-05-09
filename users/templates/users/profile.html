@@ -6,8 +6,8 @@
     </h1>
     <h2>
         Bmi: 
-        {% if user.bmi_count %}
-            {{ user.bmi_count }}
+        {% if user.profile.bmi_count %}
+            {{ user.profile.bmi_count }}
         {% else %}
             Nie ma
         {% endif %}
