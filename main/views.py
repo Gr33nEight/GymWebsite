@@ -14,9 +14,17 @@ class WorkoutListView(ListView):
     context_object_name = 'workouts'
     ordering = ['-created_at']
 
+class MyWorkoutListView(ListView):
+    model = Workout
+    template_name = 'main/my-workouts.html'
+    context_object_name = 'myWorkouts'
+    ordering = ['-created_at']
+
 class WorkoutDetailView(DetailView):
     model = Workout
     
-
 def about(request):
     return render(request, 'main/about.html')
+
+def calculator(request):
+    return render(request, 'main/calculator.html')

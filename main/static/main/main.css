@@ -1,11 +1,11 @@
 body {
-    background: #fafafa;
-    color: #333333;
+    background: #1f2833;
+    color: #c5c6c7;
     margin-top: 5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #66fcf1;
   }
   
   ul {
@@ -13,40 +13,42 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #0b0c10;
   }
   
-  .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+  .navbar-nav .nav-link {
+    color: #C65;
   }
   
-  .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+  .navbar-nav .nav-link:hover {
+    color: #0FA4AF;
+    font-weight: 500;
   }
   
-  .site-header .navbar-nav .nav-link.active {
+  .navbar-nav .nav-link.active {
     font-weight: 500;
   }
   
   .content-section {
-    background: #ffffff;
+    background: #0b0c10;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
+    border: none;
+    border-radius: 5px;
     margin-bottom: 20px;
   }
   
   .article-title {
-    color: #444444;
+    color: #66fcf1;
   }
   
   a.article-title:hover {
-    color: #428bca;
+    color: #afdde5;
     text-decoration: none;
   }
   
   .article-content {
     white-space: pre-line;
+    color: #c5c6c7;
   }
   
   .article-img {
@@ -56,13 +58,23 @@ body {
   }
   
   .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    padding-block: 15px;
+    margin-bottom: -10px;
+    border-top: 1px solid #c5c6c7;
+  }
+
+  .body-part {
+    color: #ffff;
+    display: inline; 
+    padding-inline: 5px;
+    background-color: #1f2833;
+    border-radius: 20px;
+    padding: 5px;
+    padding-inline: 10px;
   }
   
   .article-metadata a:hover {
-    color: #333;
+    color: #afdde5;
     text-decoration: none;
   }
   
@@ -90,3 +102,46 @@ body {
             line-clamp: 3; 
     -webkit-box-orient: vertical;
   }
+  .calculator {
+    background-color: #0b0c10;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .BMI-h2 {
+      text-align: center;
+  }
+  .input-group {
+      margin-bottom: 15px;
+      color: #c5c6c7;
+  }
+  .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #c5c6c7;
+  }
+  .input-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      background-color: #1f2833;
+      border: 1px solid #66fcf1;
+      color: #66fcf1;
+  }
+  .btn-calculate {
+    display: block;
+    width: calc(100% - 16px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #66fcf1;
+    color: #0b0c10;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 8px; 
+}
+  .btn-calculate:hover {
+    background-color: #1f2833;
+    color: #c5c6c7;
+}

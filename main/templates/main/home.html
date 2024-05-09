@@ -3,12 +3,13 @@
     {% for workout in workouts %}
         <article class="media content-section">
             <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2" href="#">{{ workout.author }}</a>
-                <small class="text-muted">{{ workout.created_at|date:"F d, Y" }}</small>
-            </div>
-            <h2><a class="article-title" href="{% url 'workout-detail' workout.id %}">{{ workout.title }}</a></h2>
-            <p class="text-line-limited">{{ workout.description }}</p>
+                <h2><a class="article-title" href="{% url 'workout-detail' workout.id %}">{{ workout.title }}</a></h2>
+                <p class="text-line-limited">{{ workout.description }}</p>
+                <div class="article-metadata">
+                    {% for i in workout.body_parts.all %}
+                        <div class="body-part">{{ i }}</div>
+                    {% endfor %}
+                </div> 
             </div>
         </article>
     {% endfor %}
