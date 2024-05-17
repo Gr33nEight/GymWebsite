@@ -1,7 +1,7 @@
 {% extends "main/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form method="post">
+<form method="post" onsubmit="false">
     {% csrf_token %}
     <div class="calculator">
         <h2>Kalkulator BMI</h2>
@@ -13,15 +13,14 @@
             <label for="height">Podaj wzrost w cm:</label>
             <input type="number" name="height" id="height" placeholder="Wzrost" min="0" max="999">
         </div>
-        <button class="btn-calculate">Oblicz BMI</button>
-        <div id="result"></div>
+        <button class="btn-calculate" name="count-bmi">Oblicz BMI</button>
     </div>
+    {% if bmi != 0 %}
+        <div class="results">
+            <h2 class="BMI-h2">Wynik</h2>
+            <div class="result-item">BMI: {{ bmi }}</div>   
+            <div class="result-item">Opis: {{ description }}</div>   
+        </div>
+    {% endif %}
 </form>
-{% if bmi != 0 %}
-    <div class="results">
-        <h2 class="BMI-h2">Wynik</h2>
-        <div class="result-item">BMI: {{ user.bmi_count }}</div>   
-        <div class="result-item">Opis: {{ description }}</div>   
-    </div>
-{% endif %}
 {% endblock content %}

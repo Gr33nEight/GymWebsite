@@ -1,0 +1,3 @@
+python -m pip install pipenv
+pipenv install django
+python manage.py runserver

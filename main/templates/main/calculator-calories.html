@@ -6,22 +6,51 @@
     <h2>Kalkulator kalorii</h2>
     <div class="input-group">
         <label for="weight">Podaj swój wiek:</label>
-        <input type="number" name="age" id="age" placeholder="Wiek" min="0" max="99">
+        <input type="number" name="age" placeholder="Wiek" min="0" max="99">
     </div>
     <div class="input-group">
-        <label for="height">Podaj ilość treningów w tygodniu:</label>
-        <input type="number" name="training" id="height" placeholder="Ilość treningów" min="0" max="7">
+        <label for="weight">Podaj poziom twojej aktywności:</label>
+        <select name="activity_level" class="select-option">
+            <option value="nieaktywny">nieaktywny</option>
+            <option value="lekko-aktywny">lekko aktywny</option>
+            <option value="srednio-aktywny">średnio aktywny</option>
+            <option value="aktywny">aktywny</option>
+            <option value="bardzo-aktywny">bardzo aktywny</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label for="weight">Podaj cel twojej diety:</label>
+        <select name="diet_goal" class="select-option">
+            <option value="chudniecie">chudnięcie</option>
+            <option value="utrzymanie">utrzymanie</option>
+            <option value="przytycie">przytycie</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label for="weight">Podaj swoją płeć:</label>
+        <select name="gander" class="select-option">
+            <option value="male">Mężczyzna</option>
+            <option value="female">Kobieta</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label for="height">Podaj swój wzrost (cm): </label>
+        <input type="number" name="height" placeholder="Wzrost" min="0" max="300">
+    </div>
+    <div class="input-group">
+        <label for="height">Podaj swoją wagę (kg): </label>
+        <input type="number" name="weight" placeholder="Waga" min="0" max="999">
+    </div>
+    <div class="input-group">
+        
     </div>
     <button type="submit" class="btn-calculate">Oblicz kalorie</button>
     <div id="result"></div>
 </div>
-{% if calories != 0 and protein != 0 %}
+{% if calories != 0 %}
     <div class="results">
-    
         <h2 class="BMI-h2">Wynik</h2>
-        <div class="result-item">Kalorie: {{ calories }} kcal</div>   
-        <div class="result-item">Białko: {{ protein }} g</div>   
-    
+        <div class="result-item">Twoje dzienne zapotrzebowanie kaloryczne to: {{ calories }} kcal</div>   
     </div>
     <h2>{{ bmi }}</h2>
 {% endif %}

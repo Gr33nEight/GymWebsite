@@ -161,3 +161,144 @@ body {
   font-size: 22px;
   color: #66fcf1;
 }
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  color: transparent;
+  padding: 0px;
+  margin: 0 auto; /* Wycentrowanie kontenera */
+  width: 100%; /* Kontener wypełnia całą dostępną szerokość */
+  margin-bottom: 20px;
+}
+
+#eksportuj-div, #importuj-div {
+  flex: 1; /* Elastyczność dla zawartości */
+}
+
+#eksportuj-div, #importuj-div {
+  display: flex;
+    flex-direction: column; /* Ustawiamy flexbox w kolumnie, aby zawartość była wyśrodkowana w pionie */
+    align-items: center; /* Wyśrodkowanie zawartości w pionie */
+    text-align: center; /* Wyśrodkowanie tekstu w poziomie */
+    justify-content: center;
+}
+#eksportuj-div {
+  margin-right: 30px;
+}
+
+#eksportuj-div, #importuj-div {
+  background-color: #0b0c10;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Wycentrowanie tekstu wewnątrz divów */
+  align-content: end;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #66fcf1;
+  color: #0b0c10;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button[id="delete"] {
+  background-color: #ff6666;
+  color: #ffffff;
+}
+
+button[id="add"] {
+  background-color: #66fcf1;
+  color: #0b0c10;
+}
+
+button[type="submit"]:hover {
+  background-color: #1f2833;
+  color: #c5c6c7;
+}
+
+.file-upload-label {
+  display: inline-block;
+  background-color: #66fcf1;
+  color: #0b0c10;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.file-upload-label:hover {
+  background-color: #1f2833;
+  color: #c5c6c7;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.submit-button {
+  display: inline-block;
+  background-color: #66fcf1;
+  color: #0b0c10;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #1f2833;
+  color: #c5c6c7;
+}
+
+#file-name {
+  margin-left: 10px;
+  color: #c5c6c7;
+}
+
+.alert-success {
+  border-color: #66fcf1;
+  background-color: #46a29d80;
+  color: #ffffff;
+}
+
+.heading {
+  color: #afdde5;
+  font-weight: 600;
+}
+
+#workout-content{
+  margin: 20px;
+}
+
+/* Dodane style dla select pickerów */
+.select-option {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #1f2833;
+  border: 1px solid #66fcf1;
+  color: #66fcf1;
+  appearance: none; /* Resetuj domyślny wygląd przeglądarki */
+  -webkit-appearance: none; /* Resetuj domyślny wygląd przeglądarki dla Safari */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>'); /* Dodaj ikonę strzałki */
+  background-position: right 8px center; /* Ustaw pozycję ikony strzałki */
+  background-repeat: no-repeat; /* Nie powtarzaj ikony strzałki */
+  background-size: 16px; /* Ustaw rozmiar ikony strzałki */
+  padding-right: 30px; /* Dodaj odstęp dla ikony strzałki */
+  cursor: pointer; /* Zmień kursor na wskaźnik */
+}
+
+/* Dodaj efekt hover dla select pickerów */
+.select-option:hover {
+  border-color: #0FA4AF; /* Zmień kolor obramowania po najechaniu myszą */
+}

@@ -1,16 +1,30 @@
-{% extends "main/base.html" %}
+{% extends "main/home.html" %}
 {% block content %}
-    {% for workout in workouts %}
-        <article class="media content-section">
-            <div class="media-body">
-                <h2><a class="article-title" href="{% url 'workout-detail' workout.id %}">{{ workout.title }}</a></h2>
-                <p class="text-line-limited">{{ workout.description }}</p>
-                <div class="article-metadata">
-                    {% for i in workout.body_parts.all %}
-                        <div class="body-part">{{ i }}</div>
-                    {% endfor %}
-                </div> 
-            </div>
-        </article>
-    {% endfor %}
+    <div id="container">
+        <div id="eksportuj-div">
+            <h5>Eksportuj dane do pliku CSV</h5>
+            <form action="{% url 'export_workouts' %}" method="get">
+                <button type="submit">Eksportuj dane do pliku CSV</button>
+            </form> 
+        </div>
+        <div id="importuj-div">
+            <h5>Importuj dane z pliku CSV</h5>
+            <form action="{% url 'import_workouts' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="myfile" class="file-upload-label">
+                    <span>Wybierz plik</span>
+                    <input type="file" name="myfile" id="myfile" class="file-upload-input" onchange="updateFileName(this)">
+                </label>
+                <span id="file-name">Nie wybrano pliku</span>
+                <button type="submit" >Importuj dane z pliku CSV</button>
+            </form>
+        </div>
+    </div>
+    {{ block.super }}
+    <script>
+        function updateFileName(input) {
+            var fileName = input.files[0].name;
+            document.getElementById('file-name').textContent = fileName;
+        }
+    </script>
 {% endblock content %}

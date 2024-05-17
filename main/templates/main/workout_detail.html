@@ -2,12 +2,37 @@
 {% block content %}
     <article class="media content-section">
         <div class="media-body">
-        <div class="article-metadata">
-            <a class="mr-2" href="#">{{ object.author }}</a>
-            <small class="text-muted">{{ object.created_at|date:"F d, Y" }}</small>
+            <h2><a class="article-title">{{ workout.title }}</a></h2>
+            <p class="article-content">{{ workout.description }}</p>
+            <div id="workout-content">
+                {% for workout_exercise in workout.workout_exercises.all %}
+                    <div>
+                        <h4>{{ workout_exercise.exercise.title }}</h4>
+                        <p class="heading">Ilość setów: {{ workout_exercise.sets_count }}</p>
+                        <p class="heading">Ilość powtórzeń: {{ workout_exercise.reps_count }}</p>
+                        <p class="heading">Instrukcje:</p>
+                        <p>{{ workout_exercise.exercise.instructions }}</p>
+                        <div class="article-metadata">
+                            {% for i in workout.workout_exercise.exercise.body_parts.all %}
+                                <div class="body-part">{{ i }}</div>
+                            {% endfor %}
+                        </div> 
+                    </di>
+                {% endfor %}
+            </div>
         </div>
-        <h2>{{ object.title }}</h2>
-        <p class="article-content">{{ object.description }}</p>
-        </div>
+        {% if workout in current_user.users_workouts.all %}
+            <form method="post" action="{% url 'delete_workout' %}">
+                {% csrf_token %}
+                <input type="hidden" name="workout_id" value="{{ workout.id }}">
+                <button id="delete" type="submit">Usuń ze swoich treningów</button>
+            </form>
+        {% else %}
+            <form method="post" action="{% url 'add_workout' %}">
+                {% csrf_token %}
+                <input type="hidden" name="workout_id" value="{{ workout.id }}">
+                <button id="add" type="submit">Dodaj do swoich treningów</button>
+            </form>
+        {% endif %}
     </article>
 {% endblock content %}
