@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-wjq$&jh38kbf8i(5vm4dhy3e#q4ofd9b_8j2avjiec%dojg$=m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gymwebsite-k64v.onrender.com']
 
 # Message tags
 
